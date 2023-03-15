@@ -53,13 +53,14 @@ class _SplashViewbodyState extends State<SplashViewbody>
 //method
   void initSlidingAnimation() {
     animationController =
-        AnimationController(vsync: this, duration: const Duration(minutes: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     slidingAnimation =
         //انزل النص الى اسفل ورجوعه الى اعلى
         //على المحور اكس واي حيث انه ثابت على محور اكس في حالتنا
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
 
+    animationController.forward();
     // //تحديث القيمه
     // slidingAnimation.addListener(() {
     //   setState(() {});
