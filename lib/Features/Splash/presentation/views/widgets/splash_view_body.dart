@@ -1,6 +1,9 @@
 import 'package:book/Features/Splash/presentation/views/widgets/sliding_text.dart';
+import 'package:book/Features/home/presentation/views/home_view.dart';
+import 'package:book/constants.dart';
 import 'package:book/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class SplashViewbody extends StatefulWidget {
   const SplashViewbody({
@@ -19,17 +22,10 @@ class _SplashViewbodyState extends State<SplashViewbody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(minutes: 1));
-    slidingAnimation =
-        //انزل النص الى اسفل ورجوعه الى اعلى
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-
-    // //تحديث القيمه
-    // slidingAnimation.addListener(() {
-    //   setState(() {});
-    // });
+//تنفيذ تحريك النص
+    initSlidingAnimation();
+//كود الانتقال
+    navigateToHome();
   }
 
   @override
@@ -52,5 +48,28 @@ class _SplashViewbodyState extends State<SplashViewbody>
         SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
+  }
+
+//method
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(minutes: 1));
+    slidingAnimation =
+        //انزل النص الى اسفل ورجوعه الى اعلى
+        //على المحور اكس واي حيث انه ثابت على محور اكس في حالتنا
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+
+    // //تحديث القيمه
+    // slidingAnimation.addListener(() {
+    //   setState(() {});
+    // });
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTranstionDuration);
+    });
   }
 }
