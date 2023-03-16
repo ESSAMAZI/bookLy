@@ -53,7 +53,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
 //method
   void initSlidingAnimation() {
     animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
     slidingAnimation =
         //انزل النص الى اسفل ورجوعه الى اعلى
         //على المحور اكس واي حيث انه ثابت على محور اكس في حالتنا
@@ -68,7 +68,7 @@ class _SplashViewbodyState extends State<SplashViewbody>
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 4), () {
       Get.to(() => const HomeView(),
           transition: Transition.fade, duration: kTranstionDuration);
     });
