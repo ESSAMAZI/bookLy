@@ -7,7 +7,10 @@ class BookDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: BookDetailsViewBody(),
+      body: SafeArea(
+        //العناصر تاتي بعد الاب
+        child: BookDetailsViewBody(),
+      ),
     );
   }
 }
