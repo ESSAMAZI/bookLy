@@ -1,3 +1,4 @@
+import 'package:book/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:book/Features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:book/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:book/core/utils/styles.dart';
@@ -20,7 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
           //image
           SizedBox(height: height * .05),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: width * .17),
+            padding: EdgeInsets.symmetric(horizontal: width * .19),
             child: const CustomBookImage(),
           ),
           const SizedBox(height: 30),
@@ -33,6 +34,9 @@ class BookDetailsViewBody extends StatelessWidget {
                 style: Styles.textStyle18.copyWith(
                     fontStyle: FontStyle.italic, fontWeight: FontWeight.w500)),
           ),
+          const SizedBox(height: 14),
+          //التحكم في موقعها يكون عن طريقها نفسها
+          const BookRating(mainAxisAlignment: MainAxisAlignment.center),
         ],
       ),
     );
