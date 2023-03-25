@@ -10,7 +10,7 @@ class CustomBookImage extends StatelessWidget {
       //لا يوجد بها طول وعرض
       //aspectRatio حيث يتم تحديد حجم الصوره على اساس الطول العرض
       // الموجوده فيه
-      aspectRatio: 2.7 / 4,
+      aspectRatio: 2.6 / 4,
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
