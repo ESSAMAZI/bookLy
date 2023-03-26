@@ -23,7 +23,5 @@ class BookIyApp extends StatelessWidget {
   }
 }
 
-
-
 //Pubspec Assist
-// Ctrl+Shift+P 
+// Ctrl+Shift+P
