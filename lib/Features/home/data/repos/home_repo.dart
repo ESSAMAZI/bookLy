@@ -7,7 +7,7 @@ abstract class HomeRepo {
   // نحدد الشاشة ماذا تعمل
   //قائمه الجانبيه لكتب -2 القائمه الكتب كامله
 
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
 }
 //The repository pattern
