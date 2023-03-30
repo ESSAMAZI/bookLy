@@ -1,9 +1,25 @@
+import 'dart:ffi';
+
 import 'package:bloc/bloc.dart';
 import 'package:book/Features/home/data/models/book_model/book_model.dart';
+import 'package:book/Features/home/data/repos/home_repo.dart';
 import 'package:equatable/equatable.dart';
 
 part 'featured_books_state.dart';
 
 class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
-  FeaturedBooksCubit() : super(FeaturedBooksInitial());
+  FeaturedBooksCubit(this.homeRepo) : super(FeaturedBooksInitial());
+  //استدعاء كلاس تنفيذ المهمه
+  final HomeRepo homeRepo;
+
+  Future<void> fetchFeaturedBooks() async {
+    emit(FeaturedBooksLoading());
+    //الداله التي تجلب الكتب المجانيه
+    var result = await homeRepo.fetchFeaturedBooks();
+    result.fold((failure) {
+      emit(FeaturedBooksFailure(failure.errMessage));
+    }, (books) {
+      emit(FeaturedBooksSuccess(books));
+    });
+  }
 }

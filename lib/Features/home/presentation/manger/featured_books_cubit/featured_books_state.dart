@@ -9,6 +9,8 @@ abstract class FeaturedBooksState extends Equatable {
 
 class FeaturedBooksInitial extends FeaturedBooksState {}
 
+class FeaturedBooksLoading extends FeaturedBooksState {}
+
 class FeaturedBooksFailure extends FeaturedBooksState {
   final String errMessage;
 
@@ -16,6 +18,7 @@ class FeaturedBooksFailure extends FeaturedBooksState {
 }
 
 class FeaturedBooksSuccess extends FeaturedBooksState {
+  // من الوصول الى البيانات الكتب
   final List<BookModel> books;
 
   const FeaturedBooksSuccess(this.books);
