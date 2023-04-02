@@ -14,7 +14,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+              imageUrl:
+                  'https://logowik.com/content/uploads/images/flutter5786.jpg'),
         ),
         const SizedBox(height: 43),
         Text('The Jungle Book',
