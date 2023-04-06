@@ -1,4 +1,3 @@
-import 'package:book/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:book/Features/search/presentation/views/widgets/custom_search_text_field.dart';
 import 'package:book/core/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +39,8 @@ class SearchResultListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: BestSellerListViewItem(),
+          // child: BestSellerListViewItem(),
+          child: Text(',,'),
           // child: Text('data'),
         );
       },

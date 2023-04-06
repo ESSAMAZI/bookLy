@@ -11,6 +11,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     //لكل الشاشه Scroll عمل
     return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         //لكل الشاشه Scroll عمل
         SliverToBoxAdapter(
@@ -29,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
-                  'Best Seller',
+                  'News Book',
                   style: Styles.textStyle18,
                 ),
               ),
