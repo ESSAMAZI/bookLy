@@ -9,6 +9,8 @@ abstract class HomeRepo {
 
   Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category});
 }
 //The repository pattern
 // رح تعمل ايه فقط Features نستخدمه من اجل ان نحدد بشكل صرايح وواضح
