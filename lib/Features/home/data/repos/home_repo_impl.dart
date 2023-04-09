@@ -17,7 +17,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       //نستقبل الداتا
       var data = await apiService.get(
-          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=computer');
+          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=flutter');
       //البيانات التي رح ترجع لنا نضعها بداخل قائمه
       List<BookModel> books = [];
       //نعمل لوب لتحميل البيانات
