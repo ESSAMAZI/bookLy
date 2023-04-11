@@ -13,6 +13,8 @@ class BookDetailsView extends StatefulWidget {
 }
 
 class _BookDetailsViewState extends State<BookDetailsView> {
+  //عمل نقل بيانات وعرض لبيانات
+  //حيث تم توفيرها في هذه الشاشه فقط
   @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
@@ -22,10 +24,10 @@ class _BookDetailsViewState extends State<BookDetailsView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       //العناصر تاتي بعد الاب
       body: SafeArea(
-        child: BookDetailsViewBody(),
+        child: BookDetailsViewBody(bookModel: widget.bookModel),
       ),
     );
   }
