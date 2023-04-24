@@ -31,6 +31,7 @@ dependencies:
   dartz: ^0.10.1
   cached_network_image: ^3.2.3
   dio: ^4.0.6
+  url_launcher: ^6.1.7
   equatable: ^2.0.5
   flutter:
     sdk: flutter
